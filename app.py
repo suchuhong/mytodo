@@ -5,6 +5,7 @@ from flask import flash
 from flask import redirect
 from flask import url_for
 from flask import Blueprint
+from config.config import secret_key
 
 from routes.todo import main as todo_routes
 
@@ -12,7 +13,7 @@ from routes.todo import main as todo_routes
 app = Flask(__name__)
 # 设置 secret_key 来使用 flask 自带的 session
 # 这个字符串随便你设置什么内容都可以
-app.secret_key = 'random string'
+app.secret_key = secret_key
 
 
 """
