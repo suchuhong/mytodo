@@ -61,3 +61,9 @@ class Todo(Model):
         # 创建时间和 更新时间
         self.ct = int(time.time())
         self.ut = self.ct
+
+    def setTime(self):
+        myformat = '%Y-%m-%d %H:%M:%S'
+        value = time.localtime(self.ct)
+        dt = time.strftime(myformat, value)
+        return dt
